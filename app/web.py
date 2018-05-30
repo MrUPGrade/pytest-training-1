@@ -8,6 +8,9 @@ class BusinessLogic:
         self._db = db
 
     def get_user_ended_with(self, letter):
+        if type(letter) != str:
+            raise ValueError('letter must be str')
+
         users = self._db.get_users()
 
         result = []
